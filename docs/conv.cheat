@@ -1,0 +1,40 @@
+% conv, anyconv, converter, media, images, documents
+
+# Extract audio from video (e.g. MP4 to MP3)
+conv <input_video> <output_audio>
+
+# Convert media or document using shorthand target format
+conv <input_file> <target_format>
+
+# Batch convert images using glob pattern (e.g. *.png to webp)
+conv '<glob_pattern>' <target_format>
+
+# Render Markdown document to HTML or DOCX
+conv <markdown_file> <target_format>
+
+# Convert between CSV, TSV, and JSON tabular data
+conv <data_table> <target_format>
+
+# Convert EPUB to Kindle MOBI or PDF
+conv <ebook_file> <target_format>
+
+# Convert presentation or document slides to PDF
+conv <office_doc> pdf
+
+# Preview planned conversion commands without executing (dry-run)
+conv --dry-run <input_file> <target_format>
+
+# Parallel batch conversion with worker threads
+conv -j <jobs> '<glob_pattern>' <target_format>
+
+# List all supported formats and backend engines
+conv --list
+
+$ input_video: find . -maxdepth 2 -type f \( -name "*.mp4" -o -name "*.mkv" -o -name "*.mov" -o -name "*.webm" -o -name "*.avi" \) 2>/dev/null
+$ markdown_file: find . -maxdepth 2 -type f \( -name "*.md" -o -name "*.markdown" \) 2>/dev/null
+$ data_table: find . -maxdepth 2 -type f \( -name "*.csv" -o -name "*.tsv" -o -name "*.json" \) 2>/dev/null
+$ ebook_file: find . -maxdepth 2 -type f \( -name "*.epub" -o -name "*.mobi" -o -name "*.fb2" \) 2>/dev/null
+$ office_doc: find . -maxdepth 2 -type f \( -name "*.docx" -o -name "*.pptx" -o -name "*.xlsx" -o -name "*.odt" \) 2>/dev/null
+$ input_file: find . -maxdepth 1 -type f 2>/dev/null
+$ target_format: echo -e "mp3\nmp4\npng\njpg\nwebp\ngif\npdf\nhtml\ndocx\njson\ncsv\ntsv\nmobi\nepub"
+$ jobs: echo -e "4\n8\n2\n16"

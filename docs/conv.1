@@ -1,0 +1,73 @@
+.TH CONV 1 "September 2026" "conv 0.1.0" "User Commands"
+.SH NAME
+conv, anyconv \- Universal smart CLI file converter
+.SH SYNOPSIS
+.B conv
+[\fIOPTIONS\fR] \fIFILE(S)...\fR \fITARGET\fR
+.br
+.B conv
+\fI--list\fR
+.br
+.B conv
+\fIcompletions\fR \fISHELL\fR
+.SH DESCRIPTION
+.B conv
+(also available as \fBanyconv\fR) is an intelligent, high-performance command-line converter. It automatically analyzes input file formats via extension and magic byte header inspection, and selects the optimal underlying engine (FFmpeg, ImageMagick, Pandoc, Calibre ebook-convert, headless LibreOffice, pdftoppm, or a zero-subprocess in-memory Rust data engine) to perform the conversion.
+.SH OPTIONS
+.TP
+\fB\-o\fR, \fB\-\-output\-dir\fR \fIDIR\fR
+Directory where converted files will be saved. Defaults to the same directory as each input file.
+.TP
+\fB\-j\fR, \fB\-\-jobs\fR \fIN\fR
+Maximum number of parallel conversion worker threads (default: min(4, CPU cores)).
+.TP
+\fB\-d\fR, \fB\-\-dry\-run\fR
+Display planned conversions and commands without executing them.
+.TP
+\fB\-f\fR, \fB\-\-force\fR
+Overwrite existing output files without prompting.
+.TP
+\fB\-k\fR, \fB\-\-keep\-going\fR
+Continue processing remaining items in a batch if an error occurs on one file.
+.TP
+\fB\-l\fR, \fB\-\-list\fR
+Display all supported file formats, backend engines, and system availability.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print help information.
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+Print version information.
+.SH SUBCOMMANDS
+.TP
+\fBcompletions\fR \fISHELL\fR
+Generate shell auto-completion scripts for \fIbash\fR, \fIzsh\fR, \fIfish\fR, \fIelvish\fR, or \fIpowershell\fR.
+.SH EXAMPLES
+.TP
+Extract MP3 audio from MP4 video:
+.B conv video.mp4 audio.mp3
+.TP
+Convert audio using shorthand target format:
+.B conv song.wav mp3
+.TP
+Batch convert all PNG images to WebP:
+.B conv '*.png' webp
+.TP
+Convert Markdown to HTML:
+.B conv doc.md html
+.TP
+Convert EPUB to Kindle MOBI:
+.B conv book.epub mobi
+.TP
+Convert CSV tabular data to JSON:
+.B conv table.csv json
+.TP
+Preview planned command for video conversion:
+.B conv --dry-run video.mp4 gif
+.SH SEE ALSO
+.BR ffmpeg (1),
+.BR magick (1),
+.BR pandoc (1),
+.BR ebook-convert (1)
+.SH AUTHORS
+Written by ACEECA1 <https://github.com/ACEECA1/anyconv>.
