@@ -20,7 +20,7 @@ use std::sync::Arc;
 #[derive(Parser, Debug)]
 #[command(
     name = "conv",
-    author = "ACEECA1",
+    author = "ChematWalid",
     version = env!("CARGO_PKG_VERSION"),
     about = "Universal Smart Converter CLI — automatically routes media, documents, ebooks, images, and data",
     long_about = "Universal Smart Converter CLI (conv / anyconv)\n\n\

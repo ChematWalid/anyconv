@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-REPO="ACEECA1/anyconv"
+REPO="ChematWalid/anyconv"
 BIN_NAME="conv"
 
 echo "=== Installing conv (anyconv) ==="

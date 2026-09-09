@@ -1,7 +1,7 @@
 # conv
 
 > Universal smart CLI file converter routing media, documents, ebooks, images, and data.
-> More information: <https://github.com/ACEECA1/anyconv>.
+> More information: <https://github.com/ChematWalid/anyconv>.
 
 - Convert a video to an audio file (e.g. extract MP3):
   `conv {{path/to/video.mp4}} {{path/to/audio.mp3}}`

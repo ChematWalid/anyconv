@@ -45,7 +45,7 @@ To ensure **100% compatibility and zero system breakage**, this tool is named **
 
 ### Option 1: Quick Install Script
 ```bash
-git clone https://github.com/ACEECA1/anyconv.git
+git clone https://github.com/ChematWalid/anyconv.git
 cd anyconv
 ./install.sh
 ```

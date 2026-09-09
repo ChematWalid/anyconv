@@ -2,11 +2,11 @@
 name = "conv"
 version = "0.1.0"
 edition = "2021"
-authors = ["ACEECA1"]
+authors = ["ChematWalid"]
 description = "Universal Smart Converter CLI"
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/ACEECA1/anyconv"
+repository = "https://github.com/ChematWalid/anyconv"
 keywords = ["converter", "cli", "media", "document", "pandoc", "ffmpeg"]
 categories = ["command-line-utilities", "multimedia"]
 
